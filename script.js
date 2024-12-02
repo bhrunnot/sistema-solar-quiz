@@ -90,3 +90,11 @@ const questions = [
     closeMenu();
   }
 
+  function goBack() {
+    const startScreen = document.getElementById("start-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+  
+    // Esconde a tela de quiz e mostra a tela inicial
+    quizScreen.classList.add("hidden");
+    startScreen.classList.remove("hidden");
+  }

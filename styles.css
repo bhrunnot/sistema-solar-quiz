@@ -7,40 +7,53 @@ body {
     margin: 0;
     background-color: #f4f4f4;
     flex-direction: column;
+    text-align: center;
   }
   
   /* Tela Inicial */
-.start-screen {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  text-align: center;
-  background: url('background.jpg') no-repeat center center fixed; /* Troque pela imagem desejada */
-  background-size: cover;
-  font-family: Arial, sans-serif;
-  color: white;
-}
+  .start-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    background: url('https://c.wallhere.com/photos/87/b9/1920x1080_px_stars-1403541.jpg!d') no-repeat center center fixed;
+    background-size: cover; /* Tenta ajustar a imagem sem distorcê-la */
+    background-position: center center;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    color: white;
+  }
+  
 
 .start-screen h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.start-screen p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 .start-screen button {
-  padding: 10px 20px;
+  padding: 15px 30px;
   font-size: 1.2rem;
   color: white;
-  background-color: #3498db;
+  background-color: #f39c12;
   border: none;
   cursor: pointer;
-  border-radius: 5px;
-  transition: transform 0.2s, background-color 0.2s;
+  border-radius: 8px;
+  transition: transform 0.2s, background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .start-screen button:hover {
-  background-color: #2980b9;
+  background-color: #e67e22;
   transform: scale(1.1);
 }
 
@@ -63,70 +76,129 @@ body {
   }
 }
 
+.planets-container {
+  display: flex;
+  justify-content: center; /* Centraliza os planetas horizontalmente */
+  flex-wrap: nowrap; /* Permite que os planetas quebrem linha caso necessário */
+  gap: 20px; /* Espaçamento entre os planetas */
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+  
+.planet {
+  width: 100px;
+  height: 100px;
+  background-color: transparent; /* Remover o fundo azul */
+  color: rgb(44, 44, 44);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin: 10px;
+  position: relative;
+}
 
+.planet-img {
+  width: 80px;  /* Ajuste o tamanho da imagem para caber dentro do círculo */
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 8px;  /* Faz a imagem ficar arredondada */
+}
 
+.planet p {
+  margin: 0;
+  font-size: 14px;
+}
 
-  .planets-container {
-    display: flex;
-    justify-content: space-around;
-    width: 80%;
-    margin-bottom: 30px;
-  }
+.planet:hover {
+  transform: scale(1.1);
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background-color: white;
+  border: 2px solid #3498db;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 250px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}  
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  color: #3498db;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
   
-  .planet {
-    width: 100px;
-    height: 100px;
-    background-color: #3498db;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-  }
+.close-btn:hover {
+  color: red;
+}
   
-  .planet:hover {
-    transform: scale(1.1);
-  }
+.menu.active {
+  display: block;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}  
   
-  .menu {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.8);
-    background-color: white;
-    border: 2px solid #3498db;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 250px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    opacity: 0;
-  }
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #3498db;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.2s, background-color 0.2s;
+}
   
-  button {
-    margin-top: 10px;
-    padding: 5px 10px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
+button:hover {
+  background-color: #2980b9;
+  transform: scale(1.1);
+}
   
-  button:hover {
-    background-color: #2980b9;
-  }
-  
-  .feedback {
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #2c3e50;
-  }
-  .menu.active {
-    display: block;
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-  }
+.feedback {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.menu.active {
+  display: block;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+#menu-options button {
+  margin: 10px 0; /* Adiciona espaçamento vertical entre os botões */
+  padding: 10px 20px; /* Ajusta o tamanho do botão para que fique mais fácil de clicar */
+  font-size: 1rem;
+  color: white;
+  background-color: #3498db;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#menu-options button:hover {
+  background-color: #2980b9;
+  transform: scale(1.1);
+}
