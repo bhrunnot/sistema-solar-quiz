@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Interativo - Sistema Solar</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Tela Inicial -->
+  <div id="start-screen" class="start-screen">
+    <h1>Bem-vindo ao Quiz do Sistema Solar</h1>
+    <button onclick="startQuiz()">Iniciar</button>
+  </div>
+
+  <!-- Tela dos Planetas -->
+  <div id="quiz-screen" class="hidden">
+    <h1>Quiz do Sistema Solar</h1>
+    <div class="planets-container">
+      <div class="planet" id="planet1" onclick="showMenu(1)">Mercúrio</div>
+      <div class="planet" id="planet2" onclick="showMenu(2)">Vênus</div>
+      <div class="planet" id="planet3" onclick="showMenu(3)">Terra</div>
+      <div class="planet" id="planet4" onclick="showMenu(4)">Marte</div>
+    </div>
+
+    <!-- Menu dinâmico -->
+    <div id="menu" class="menu">
+      <h3 id="menu-title">Título</h3>
+      <p id="menu-question">Pergunta</p>
+      <div id="menu-options"></div>
+      <button onclick="closeMenu()">Fechar</button>
+    </div>
+
+    <!-- Feedback -->
+    <div id="feedback" class="feedback"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
